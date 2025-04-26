@@ -18,15 +18,14 @@ Route::group([
 
     });
 
-
 /* Public Routes */
-
 Route::group([
     'prefix' => 'admin',
     'as' => 'admin.',
     'middleware' => 'guest',
-    ],
+],
     function () {
 
         Route::get('/login', [AuthController::class, 'login'])->name('login');
+        Route::get('/forget-password', [AuthController::class, 'forgetPassword'])->name('password.request');
     });
