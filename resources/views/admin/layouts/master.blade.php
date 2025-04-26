@@ -14,8 +14,8 @@
         <!-- Main Content -->
         <div class="main-content">
 
-
             @yield('content')
+
         </div>
 
         @include('admin.layouts.footer')
