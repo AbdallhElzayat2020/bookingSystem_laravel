@@ -18,9 +18,12 @@ class UserTypeMiddleware
 
         /* Check user_type */
         if (auth()->user()->user_type === $userType) {
+
             return $next($request);
 
         }
         return to_route('dashboard');
     }
 }
+
+
