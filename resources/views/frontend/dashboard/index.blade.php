@@ -4,7 +4,7 @@
     <section id="dashboard">
         <div class="container">
             <div class="row">
-               @include('frontend.dashboard.sidebar')
+                @include('frontend.dashboard.sidebar')
                 <div class="col-lg-9">
                     <div class="dashboard_content">
                         <div class="manage_dasboard">
