@@ -56,7 +56,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="name">Name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="name" value="{{old('name', auth()->user()->name )}}">
+                                            <input type="text" class="form-control" name="name" value="{{old('name',$user->name )}}">
                                             @error('name')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -67,8 +67,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="email">Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="email" name="email"
-                                                   value="{{old('email',auth()->user()->email )}}">
+                                            <input type="email" class="form-control" id="email" name="email" value="{{old('email',$user->email )}}">
                                             @error('email')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -79,8 +78,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="phone">Phone <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="phone" name="phone"
-                                                   value="{{old('email',auth()->user()->phone)}}">
+                                            <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone',$user->phone)}}">
                                             @error('phone')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -91,8 +89,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="address">Address <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="address" name="address"
-                                                   value="{{old('email',auth()->user()->address )}}">
+                                            <input type="text" class="form-control" id="address" name="address" value="{{old('address',$user->address )}}">
                                             @error('address')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -103,7 +100,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="about">About <span class="text-danger">*</span> </label>
-                                            <textarea name="about" id="about" class="form-control" style="height: 300px!important;"></textarea>
+                                            <textarea name="about" id="about" class="form-control" style="height: 300px!important;">{{$user->about}}</textarea>
                                             @error('about')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -114,8 +111,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="fb_link">Facebook Link</label>
-                                            <input type="text" class="form-control" id="fb_link" name="fb_link"
-                                                   value="{{old('fb_link',auth()->user()->fb_link )}}">
+                                            <input type="text" class="form-control" id="fb_link" name="fb_link" value="{{old('fb_link',$user->fb_link )}}">
                                             @error('fb_link')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -126,8 +122,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="x_link">X Link</label>
-                                            <input type="text" class="form-control" id="x_link" name="x_link"
-                                                   value="{{old('x_link',auth()->user()->x_link )}}">
+                                            <input type="text" class="form-control" id="x_link" name="x_link" value="{{old('x_link',$user->x_link )}}">
                                             @error('x_link')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -138,8 +133,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="in_link">Facebook Link</label>
-                                            <input type="text" class="form-control" id="in_link" name="in_link"
-                                                   value="{{old('in_link',auth()->user()->in_link )}}">
+                                            <input type="text" class="form-control" id="in_link" name="in_link" value="{{old('in_link',$user->in_link )}}">
                                             @error('in_link')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -150,8 +144,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="wa_link">Whatsapp Link</label>
-                                            <input type="text" class="form-control" id="wa_link" name="wa_link"
-                                                   value="{{old('wa_link',auth()->user()->wa_link )}}">
+                                            <input type="text" class="form-control" id="wa_link" name="wa_link" value="{{old('wa_link',$user->wa_link )}}">
                                             @error('wa_link')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -162,8 +155,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="website">Website</label>
-                                            <input type="text" class="form-control" id="website" name="website"
-                                                   value="{{old('website',auth()->user()->website )}}">
+                                            <input type="text" class="form-control" id="website" name="website" value="{{old('website',$user->website )}}">
                                             @error('website')
                                             <div class="text-danger mt-2">
                                                 {{ $message }}
@@ -176,7 +168,6 @@
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
