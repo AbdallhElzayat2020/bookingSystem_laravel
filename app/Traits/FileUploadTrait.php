@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 
 trait FileUploadTrait
 {
-    public function handleUploadFile(Request $request, string $inputName, string $oldPath = null, string $path = '/uploads'): ?string
+    public function handleUploadFile(Request $request, string $inputName, ?string $oldPath = null, string $path = '/uploads'): ?string
     {
         if ($request->hasFile($inputName)) {
 
@@ -18,7 +18,9 @@ trait FileUploadTrait
             $image->move(public_path($path), $imageName);
 
             /* delete previous image from storage */
-            if ($oldPath && File::exists(public_path($oldPath))) {
+            $exculudedPath = '/default';
+
+            if ($oldPath && File::exists(public_path($oldPath)) && strpos($oldPath, $exculudedPath) !== 0) {
                 File::delete(public_path($oldPath));
             }
 
