@@ -18,6 +18,8 @@ Route::group([
 
         /* Profile routes */
         Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+        Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     });
 
 /* Public Routes */
