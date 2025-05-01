@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'); // user.dashboard
     Route::get('profile', [ProfileController::class, 'index'])->name('profile.index'); // user.dashboard
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update'); // user.dashboard
 
 });
 
