@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="card-body">
-                            <x-auth-session-status class="mb-4" :status="session('status')"/>
+                            <x-auth-session-status class="mb-4 alert alert-success" :status="session('status')"/>
                             <form method="POST" action="{{ route('password.email') }}" class="needs-validation">
                                 @csrf
                                 <div class="form-group">
