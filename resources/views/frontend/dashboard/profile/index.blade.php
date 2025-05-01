@@ -212,13 +212,15 @@
 
                         <div class="my_listing list_mar">
                             <h4>change password</h4>
-                            <form>
+                            <form action="{{ route('user.profile-password.update') }}" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="col-xl-4 col-md-6">
                                         <div class="my_listing_single">
                                             <label>current password</label>
                                             <div class="input_area">
-                                                <input type="password" placeholder="Current Password">
+                                                <input type="password" placeholder="Current Password" name="current_password">
                                             </div>
                                         </div>
                                     </div>
@@ -226,7 +228,7 @@
                                         <div class="my_listing_single">
                                             <label>new password</label>
                                             <div class="input_area">
-                                                <input type="password" placeholder="New Password">
+                                                <input type="password" placeholder="New Password" name="password">
                                             </div>
                                         </div>
                                     </div>
@@ -234,12 +236,12 @@
                                         <div class="my_listing_single">
                                             <label>confirm password</label>
                                             <div class="input_area">
-                                                <input type="password" placeholder="Confirm Password">
+                                                <input type="password" placeholder="Confirm Password" name="password_confirmation">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="read_btn">upload</button>
+                                        <button type="submit" class="read_btn">Update</button>
                                     </div>
                                 </div>
                             </form>
