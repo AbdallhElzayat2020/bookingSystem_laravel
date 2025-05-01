@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\UpdateProfileRequest;
+use App\Traits\FileUploadTrait;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,8 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    use FileUploadTrait;
+
     public function index(): View
     {
         $user = Auth::user();
@@ -19,7 +22,12 @@ class ProfileController extends Controller
 
     public function update(UpdateProfileRequest $request): RedirectResponse
     {
+        $avatarPath = $this->handleUploadFile($request, 'avatar', $request->old_avatar);
+        $bannerPath = $this->handleUploadFile($request, 'banner', $request->old_banner);
+
         $user = Auth::user();
+        $user->avatar = !empty($avatarPath) ? $avatarPath : $request->old_avatar;
+        $user->banner = !empty($bannerPath) ? $bannerPath : $request->old_banner;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
@@ -30,6 +38,10 @@ class ProfileController extends Controller
         $user->x_link = $request->x_link;
         $user->in_link = $request->in_link;
         $user->wa_link = $request->wa_link;
+        $user->insta_link = $request->insta_link;
+        $user->save();
+
+        toastr()->success('saved successfully!');
         return redirect()->back();
     }
 }

@@ -17,9 +17,10 @@
                                         <div class="row">
                                             <div class="col-xl-6 col-md-6">
                                                 <div class="my_listing_single">
-                                                    <label>Name</label>
+                                                    <label>Name <span class="text-danger">*</span></label>
                                                     <div class="input_area">
-                                                        <input type="text" name="name" placeholder="Name" value="{{old('name',@$user->name)}}">
+                                                        <input type="text" name="name" required placeholder="Name"
+                                                               value="{{old('name',@$user->name)}}">
                                                     </div>
                                                     @error('name')
                                                     <span class="text-danger">
@@ -30,9 +31,9 @@
                                             </div>
                                             <div class="col-xl-6 col-md-6">
                                                 <div class="my_listing_single">
-                                                    <label>phone</label>
+                                                    <label>phone <span class="text-danger">*</span></label>
                                                     <div class="input_area">
-                                                        <input type="text" name="phone" placeholder="Enter Your Phone"
+                                                        <input type="text" name="phone" required placeholder="Enter Your Phone"
                                                                value="{{old('phone',@$user->phone)}}">
                                                     </div>
                                                     @error('phone')
@@ -44,9 +45,10 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="my_listing_single">
-                                                    <label>email</label>
+                                                    <label>email <span class="text-danger">*</span></label>
                                                     <div class="input_area">
-                                                        <input type="email" name="email" placeholder="Email" value="{{old('email',@$user->email)}}">
+                                                        <input type="email" name="email" placeholder="Email" required
+                                                               value="{{old('email',@$user->email)}}">
                                                     </div>
                                                     @error('email')
                                                     <span class="text-danger">
@@ -57,10 +59,10 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="my_listing_single">
-                                                    <label>Address</label>
+                                                    <label>Address </label>
                                                     <div class="input_area">
                                                         <input type="text" name="address" placeholder="Address"
-                                                               value="{{old('address',@$user->address)}}">
+                                                               value="{{old('address',@$user->address)}}" required>
                                                     </div>
                                                     @error('address')
                                                     <span class="text-danger">
@@ -71,10 +73,10 @@
                                             </div>
                                             <div class="col-xl-12">
                                                 <div class="my_listing_single">
-                                                    <label>About Me</label>
+                                                    <label>About Me <span class="text-danger">*</span></label>
                                                     <div class="input_area">
                                                         <textarea cols="3" rows="3" name="about"
-                                                                  placeholder="Your Text">{{old('about',@$user->about)}}</textarea>
+                                                                  placeholder="Your Text" required>{{old('about',@$user->about)}}</textarea>
                                                     </div>
                                                     @error('about')
                                                     <span class="text-danger">
@@ -176,6 +178,7 @@
                                             <div class="profile_pic_upload">
                                                 <img src="{{asset(@$user->avatar)}}" alt="img" class="imf-fluid w-100">
                                                 <input type="file" name="avatar">
+                                                <input type="hidden" name="old_avatar" value="{{ @$user->avatar }}">
                                             </div>
                                             @error('avatar')
                                             <span class="text-danger">
@@ -189,6 +192,7 @@
                                             <div class="profile_pic_upload">
                                                 <img src="{{asset(@$user->banner)}}" alt="img" class="imf-fluid w-100">
                                                 <input type="file" name="banner">
+                                                <input type="hidden" name="old_banner" value="{{ @$user->banner }}">
                                             </div>
                                             @error('banner')
                                             <span class="text-danger">
