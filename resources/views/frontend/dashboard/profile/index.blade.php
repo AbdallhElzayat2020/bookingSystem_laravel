@@ -209,7 +209,6 @@
                             </form>
                         </div>
 
-
                         <div class="my_listing list_mar">
                             <h4>change password</h4>
                             <form action="{{ route('user.profile-password.update') }}" method="POST">
@@ -242,23 +241,6 @@
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="read_btn">Update</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="my_listing list_mar">
-                            <form>
-                                <h4>Profile Banner Image</h4>
-                                <div class="row">
-                                    <div class="col-xl-6 col-md-8 col-lg-6">
-                                        <div class="profile_pic_upload banner_pic_upload">
-                                            <img src="images/login_breadcrumb.jpg" alt="img" class="imf-fluid w-100">
-                                            <input type="file">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="read_btn">upload</button>
                                     </div>
                                 </div>
                             </form>
