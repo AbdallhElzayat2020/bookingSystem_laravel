@@ -13,6 +13,7 @@ Route::group([
     'as' => 'admin.',
     'middleware' => ['auth', 'user.type:admin'
     ]],
+    
     function () {
 
         Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.index');

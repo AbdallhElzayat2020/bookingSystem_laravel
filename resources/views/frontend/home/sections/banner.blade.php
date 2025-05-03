@@ -17,6 +17,7 @@
                         <div class="wsus__search_area">
                             <input type="text" placeholder="What we are looking for?">
                         </div>
+                        
                         <div class="wsus__search_area">
                             <select class="select_2" name="state">
                                 <option value="">categories</option>
@@ -27,6 +28,7 @@
                                 <option value="">categories 5</option>
                             </select>
                         </div>
+
                         <div class="wsus__search_area">
                             <select class="select_2" name="state">
                                 <option value="">location</option>
@@ -37,6 +39,7 @@
                                 <option value="">location 5</option>
                             </select>
                         </div>
+
                         <div class="wsus__search_area m-0">
                             <a href="#" class="read_btn">search</a>
                         </div>
