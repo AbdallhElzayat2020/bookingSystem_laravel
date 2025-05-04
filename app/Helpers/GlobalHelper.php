@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Helpers;
 
-class helper
-{
+/* set sideBar active */
+if (!function_exists('setSidebarActive')) {
     function setSidebarActive(array $routes): ?string
     {
         foreach ($routes as $route) {
