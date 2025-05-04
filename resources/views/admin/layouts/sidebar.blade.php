@@ -7,6 +7,7 @@
             <a href="{{ route('admin.dashboard.index') }}">St</a>
         </div>
         <ul class="sidebar-menu">
+
             <li class="menu-header">Starter</li>
             <li class="{{setSidebarActive(['admin.dashboard.index'])}}">
                 <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
@@ -19,22 +20,20 @@
                     <span>Sections</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{setSidebarActive(['admin.hero.*'])}}"><a class="nav-link" href="{{ route('admin.hero.index') }}">Hero</a></li>
-                    <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                    <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+                    <li><a class="nav-link" href="">Top Navigation</a></li>
+                    <li><a class="nav-link" href="">Top</a></li>
                 </ul>
             </li>
 
-            <li class="dropdown">
+            <li class="dropdown {{setSidebarActive(['admin.category.index'])}}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
-                    <span>Pages</span></a>
+                    <span>Listings</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
+                    <li class="{{setSidebarActive(['admin.category.*'])}}"><a class="nav-link" href="{{ route('admin.category.index') }}">Categories</a></li>
                     <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
                 </ul>
             </li>
 
         </ul>
-
-
     </aside>
 </div>
